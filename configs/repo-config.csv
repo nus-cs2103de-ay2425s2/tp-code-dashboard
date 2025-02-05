@@ -1,2 +1,5 @@
 Repository's Location,Branch,File formats,Find Previous Authors,Ignore Glob List,Ignore standalone config,Ignore Commits List,Ignore Authors List,Shallow Cloning,File Size Limit,Ignore File Size Limit,Skip Ignored File Analysis
-https://github.com/reposense/RepoSense.git,master,,,,,,,,,,
+https://github.com/andychong23/ip.git,master,,,tutorials/**;gradlew.bat,,,,,,,
+https://github.com/friedrice231/ip.git,master,,,tutorials/**;gradlew.bat,,,,,,,
+https://github.com/superidol2/ip.git,master,,,tutorials/**;gradlew.bat,,,,,,,
+https://github.com/Jen999/ip.git,master,,,tutorials/**;gradlew.bat,,,,,,,
