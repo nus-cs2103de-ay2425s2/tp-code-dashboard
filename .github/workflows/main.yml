@@ -74,6 +74,9 @@ jobs:
           sed -i 's/"reportTitle":"[^"]*"/"reportTitle":"CS2103DE Software Engineering tP Code Dashboard"/g' reposense-report/summary.json
         fi
         
+        # Find and replace any occurrence of "iP Code Dashboard" with "tP Code Dashboard" in all HTML and JS files
+        find reposense-report -type f \( -name "*.html" -o -name "*.js" -o -name "*.json" \) -exec sed -i 's/iP Code Dashboard/tP Code Dashboard/g' {} \;
+        
         # Show report directory contents
         echo "=== Report Directory After Generation ==="
         ls -la reposense-report/
@@ -109,6 +112,10 @@ jobs:
         cp -r reposense-report/* deploy/ || echo "Warning: No report files to copy"
         cp -r fonts js deploy/
         cp .nojekyll favicon.ico index.html title.md deploy/
+        
+        # Update title in HTML files if they exist
+        find deploy -type f \( -name "*.html" -o -name "*.js" -o -name "*.json" \) -exec sed -i 's/iP Code Dashboard/tP Code Dashboard/g' {} \;
+        find deploy -type f \( -name "*.html" -o -name "*.js" -o -name "*.json" \) -exec sed -i 's/IP Code Dashboard/TP Code Dashboard/g' {} \;
         
         # Copy assets including logo
         mkdir -p deploy/images
