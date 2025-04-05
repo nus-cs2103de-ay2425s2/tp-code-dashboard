@@ -1,0 +1,62 @@
+Apr 05, 2025 12:42:03 AM reposense.system.LogsManager addFileHandler
+INFO: Log temp folder has been successfully created
+Apr 05, 2025 12:42:03 AM reposense.parser.CsvParser validateHeader
+INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Skip Ignored File Analysis,  Branch,  Shallow Cloning,  File formats,  Ignore Glob List,  Ignore Authors List,  Find Previous Authors,  File Size Limit,  Ignore File Size Limit,  Ignore Commits List
+Apr 05, 2025 12:42:03 AM reposense.parser.CsvParser validateHeader
+INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Branch,  Author's Git Host ID,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
+Apr 05, 2025 12:42:03 AM reposense.git.GitConfig getGlobalGitLfsConfig
+WARNING: Could not get global git lfs config
+java.lang.RuntimeException: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
+fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
+
+	at reposense.system.CommandRunner.runCommand(CommandRunner.java:23)
+	at reposense.git.GitConfig.getGitGlobalConfig(GitConfig.java:90)
+	at reposense.git.GitConfig.getGlobalGitLfsConfig(GitConfig.java:44)
+	at reposense.RepoSense.main(RepoSense.java:69)
+Caused by: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
+fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
+
+	at reposense.system.CommandRunnerProcess.waitForProcess(CommandRunnerProcess.java:46)
+	at reposense.system.CommandRunner.runCommand(CommandRunner.java:21)
+	... 3 more
+
+Apr 05, 2025 12:42:03 AM reposense.report.RepoCloner spawnCloneProcess
+INFO: Cloning in parallel from https://github.com/Jen999/tick-tock.git...
+Apr 05, 2025 12:42:03 AM reposense.report.RepoCloner spawnCloneProcess
+INFO: Cloning in parallel from https://github.com/PerRucia/cs2103de-tp.git...
+Apr 05, 2025 12:42:03 AM reposense.report.RepoCloner waitForCloneProcess
+INFO: Waiting for cloning of https://github.com/Jen999/tick-tock.git to complete...
+Apr 05, 2025 12:42:03 AM reposense.report.RepoCloner waitForCloneProcess
+INFO: Waiting for cloning of https://github.com/PerRucia/cs2103de-tp.git to complete...
+Apr 05, 2025 12:42:03 AM reposense.report.RepoCloner waitForCloneProcess
+INFO: Cloning of https://github.com/PerRucia/cs2103de-tp.git completed!
+Apr 05, 2025 12:42:03 AM reposense.report.RepoCloner waitForCloneProcess
+INFO: Cloning of https://github.com/Jen999/tick-tock.git completed!
+Apr 05, 2025 12:42:03 AM reposense.report.ReportGenerator analyzeRepos
+INFO: [2/2] Analyzing https://github.com/Jen999/tick-tock.git (master)...
+Apr 05, 2025 12:42:03 AM reposense.report.ReportGenerator analyzeRepos
+INFO: [1/2] Analyzing https://github.com/PerRucia/cs2103de-tp.git (main)...
+Apr 05, 2025 12:42:03 AM reposense.report.ReportGenerator updateRepoConfig
+INFO: https://github.com/Jen999/tick-tock.git (master) does not contain a standalone config file.
+Apr 05, 2025 12:42:03 AM reposense.report.ReportGenerator updateRepoConfig
+INFO: https://github.com/PerRucia/cs2103de-tp.git (main) does not contain a standalone config file.
+Apr 05, 2025 12:42:03 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+INFO: Extracting relevant file info from https://github.com/Jen999/tick-tock.git (master)...
+Apr 05, 2025 12:42:03 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+INFO: Extracting relevant file info from https://github.com/PerRucia/cs2103de-tp.git (main)...
+Apr 05, 2025 12:42:03 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+INFO: Extracting commits info for https://github.com/Jen999/tick-tock.git (master)...
+Apr 05, 2025 12:42:03 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+INFO: Analyzing commits info for https://github.com/Jen999/tick-tock.git (master)...
+Apr 05, 2025 12:42:04 AM reposense.report.ReportGenerator analyzeRepo
+INFO: Analysis of https://github.com/Jen999/tick-tock.git (master) completed!
+Apr 05, 2025 12:42:04 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+INFO: Extracting commits info for https://github.com/PerRucia/cs2103de-tp.git (main)...
+Apr 05, 2025 12:42:04 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+INFO: Analyzing commits info for https://github.com/PerRucia/cs2103de-tp.git (main)...
+Apr 05, 2025 12:42:04 AM reposense.report.ReportGenerator analyzeRepo
+INFO: Analysis of https://github.com/PerRucia/cs2103de-tp.git (main) completed!
+Apr 05, 2025 12:42:04 AM reposense.report.ReportGenerator generateReposReport
+INFO: The report is generated at /home/runner/work/tp-code-dashboard/tp-code-dashboard/reposense-report/reposense-report
+Apr 05, 2025 12:42:04 AM reposense.RepoSense main
+INFO: Elapsed processing time: 1.24 second(s)
